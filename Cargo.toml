@@ -1,0 +1,26 @@
+[package]
+name = "rom_hack"
+version = "0.1.0"
+authors = ["Christopher Serr <christopher.serr@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libtww = { git = "https://github.com/CryZe/libtww-core" }
+
+[features]
+default = ["ntsc_u"]
+ntsc_u = ["libtww/ntsc_u"]
+
+[lib]
+name = "rust"
+crate-type = ["staticlib"]
+
+[profile.dev]
+panic = "abort"
+opt-level = 1
+
+[profile.release]
+panic = "abort"
+lto = true

@@ -1,0 +1,20 @@
+[info]
+game-name = "Wind Waker Rnd Counter"
+
+[src]
+# iso = "C:\\Games\\Emulator\\Wii\\iso\\Wind Waker (JPN).iso"
+iso = "C:\\Games\\Emulator\\Wii\\iso\\Legend of Zelda, The - The Wind Waker (USA).iso"
+patch = "src/patch.asm"
+map = "maps/framework.map"
+
+[files]
+# You may replace or add new files to the game here
+# "path/to/file/in/iso" = "path/to/file/on/harddrive"
+
+[build]
+map = "target/framework.map"
+iso = "target/WindWakerCountRnd.iso"
+
+[link]
+entries = ["count_call", "game_loop", "init_board"] # Enter the exported function names here
+base = "0x8041_0000" # Enter the start address of the Rom Hack's code here
