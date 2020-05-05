@@ -3,7 +3,7 @@ game-name = "Wind Waker Rnd Counter"
 
 [src]
 # iso = "C:\\Games\\Emulator\\Wii\\iso\\Wind Waker (JPN).iso"
-iso = "E:\\DolphinRoms\\GZLE01.iso"
+iso = "C:\\Games\\Emulator\\Wii\\iso\\Legend of Zelda, The - The Wind Waker (USA).iso"
 patch = "src/patch.asm"
 map = "maps/framework.map"
 

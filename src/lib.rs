@@ -37,10 +37,26 @@ pub extern "C" fn count_call(rnd: f64) -> f64 {
         0x803ea7d8
     };
     let state = unsafe { &*(address as *mut RngState) };
-    let _ = write!(Console::get().lines[ConsoleLines::RngCallCount as usize].begin(), "Count: {}", count);
-    let _ = write!(Console::get().lines[ConsoleLines::RngState0 as usize].begin(), "R0: {:>5}", state.r0);
-    let _ = write!(Console::get().lines[ConsoleLines::RngState1 as usize].begin(), "R1: {:>5}", state.r1);
-    let _ = write!(Console::get().lines[ConsoleLines::RngState2 as usize].begin(), "R2: {:>5}", state.r2);
+    let _ = write!(
+        Console::get().lines[ConsoleLines::RngCallCount as usize].begin(), 
+        "Count: {}", 
+        count
+    );
+    let _ = write!(
+        Console::get().lines[ConsoleLines::RngState0 as usize].begin(), 
+        "R0: {:>5}", 
+        state.r0
+    );
+    let _ = write!(
+        Console::get().lines[ConsoleLines::RngState1 as usize].begin(),
+         "R1: {:>5}", 
+         state.r1
+    );
+    let _ = write!(
+        Console::get().lines[ConsoleLines::RngState2 as usize].begin(), 
+        "R2: {:>5}", 
+        state.r2
+    );
     rnd
 }
 
