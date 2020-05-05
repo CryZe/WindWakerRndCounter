@@ -99,7 +99,7 @@ pub extern "C" fn game_loop() -> ! {
         let rng_call_diff = current_rng_call_count - prev_rng_call_count;
         rolling_arr_index = (rolling_arr_index + 1) % RATE_WINDOW_SIZE;
         rate_avg_window[rolling_arr_index] = rng_call_diff;
-        let calls_mean: usize = rate_avg_window.iter().sum::<usize>() / RATE_WINDOW_SIZE;
+        let calls_mean: f64 = (rate_avg_window.iter().sum::<usize>() as f64) / (RATE_WINDOW_SIZE as f64);
         let _ = write!(
             Console::get().lines[ConsoleLines::RngCallRateFrame as usize].begin(), 
             "RNG Calls: {}",
@@ -107,7 +107,7 @@ pub extern "C" fn game_loop() -> ! {
         );
         let _ = write!(
             Console::get().lines[ConsoleLines::RngCallRateAvg as usize].begin(), 
-            "RNG Calls Avg: {}",
+            "RNG Calls Avg: {:.2}",
             calls_mean
         );
     })
